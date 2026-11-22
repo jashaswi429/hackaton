@@ -1,0 +1,108 @@
+.head {
+  max-width: 46rem;
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+
+.eyebrow {
+  display: inline-flex;
+  margin-bottom: clamp(16px, 2.2vw, 22px);
+}
+
+.title {
+  font-size: clamp(1.85rem, 3.9vw, 3.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.022em;
+  font-weight: 600;
+}
+
+.support {
+  margin-top: clamp(16px, 2.4vw, 24px);
+  max-width: 52ch;
+  color: var(--text-2);
+  font-size: clamp(1rem, 0.3vw + 0.92rem, 1.12rem);
+}
+
+/* ---- Sequenced steps on a rail ---- */
+.rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+}
+
+/* Connector line, aligned to the centre of the node dots. */
+.rail::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  right: 6px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--line-2),
+    var(--line-2) 70%,
+    transparent
+  );
+}
+
+.step {
+  position: relative;
+}
+
+.stepHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.node {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  box-shadow: 0 0 0 4px rgba(198, 255, 85, 0.1);
+  flex: none;
+  z-index: 1;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: var(--text-3);
+}
+
+.key {
+  margin-top: clamp(18px, 2.4vw, 26px);
+  font-size: clamp(1.15rem, 0.6vw + 1rem, 1.4rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.body {
+  margin-top: 10px;
+  max-width: 34ch;
+  color: var(--text-2);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+/* ---- Mobile: vertical rail ---- */
+@media (max-width: 760px) {
+  .rail {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rail::before {
+    top: 6px;
+    bottom: 6px;
+    left: 5px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(180deg, var(--line-2), transparent);
+  }
+}

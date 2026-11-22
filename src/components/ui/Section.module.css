@@ -1,0 +1,9 @@
+.section {
+  position: relative;
+  padding-block: clamp(72px, 11vw, 150px);
+}
+
+.surface {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}

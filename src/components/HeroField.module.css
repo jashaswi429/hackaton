@@ -1,0 +1,84 @@
+.wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 72vh;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: radial-gradient(
+      120% 90% at 70% 20%,
+      rgba(198, 255, 85, 0.07),
+      transparent 60%
+    ),
+    var(--surface);
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    55% 55% at 50% 55%,
+    rgba(198, 255, 85, 0.06),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: pan-y;
+}
+
+/* Instrument-style corner ticks — reinforce the "lab" framing. */
+.frame {
+  position: absolute;
+  inset: 14px;
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--line-strong);
+}
+
+.corner[data-pos='tl'] {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner[data-pos='tr'] {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner[data-pos='bl'] {
+  bottom: 0;
+  left: 0;
+  border-right: none;
+  border-top: none;
+}
+
+.corner[data-pos='br'] {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    aspect-ratio: 16 / 11;
+    max-height: none;
+  }
+}

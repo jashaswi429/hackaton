@@ -1,0 +1,27 @@
+{
+  "name": "qryx",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "QRYX — an interactive knowledge lab. Browser-based experiments that make invisible mechanisms visible.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild tests/qr.logic.test.ts --bundle --platform=node --format=esm --outfile=tests/.build/qr.logic.test.mjs && node tests/.build/qr.logic.test.mjs"
+  },
+  "dependencies": {
+    "jsqr": "^1.4.0",
+    "qrcode-generator": "^2.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.0"
+  }
+}

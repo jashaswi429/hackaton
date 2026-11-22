@@ -1,0 +1,46 @@
+.section {
+  position: relative;
+}
+
+/* Soft accent halo behind the closing statement. */
+.section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(760px, 90vw);
+  height: 300px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(198, 255, 85, 0.1),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  max-width: 16ch;
+}
+
+.support {
+  margin-top: clamp(16px, 2.4vw, 24px);
+  color: var(--text-2);
+  font-size: clamp(1rem, 0.4vw + 0.92rem, 1.16rem);
+}
+
+.action {
+  margin-top: clamp(28px, 4vw, 42px);
+}
