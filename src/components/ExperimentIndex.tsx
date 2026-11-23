@@ -1,7 +1,7 @@
 import {
   FEATURED_EXPERIMENT,
-  PLACEHOLDER_EXPERIMENTS,
   SECOND_EXPERIMENT,
+  THIRD_EXPERIMENT,
   SECTION_IDS,
 } from '../lib/content';
 import { ExperimentCard } from './ExperimentCard';
@@ -11,9 +11,8 @@ import { Section } from './ui/Section';
 import styles from './ExperimentIndex.module.css';
 
 /**
- * The lab index. Renders the experiment list; for the first release there is
- * a single, still-unannounced slot. Future PRDs add entries to the list —
- * no structural change required here.
+ * The lab index. Renders the experiment list; as new experiments ship, entries
+ * are added here — no structural change required.
  */
 export function ExperimentIndex() {
   return (
@@ -40,9 +39,7 @@ export function ExperimentIndex() {
         <div className={styles.list}>
           <ExperimentCard {...FEATURED_EXPERIMENT} />
           <ExperimentCard {...SECOND_EXPERIMENT} />
-          {PLACEHOLDER_EXPERIMENTS.map((experiment) => (
-            <ExperimentCard key={experiment.number} {...experiment} />
-          ))}
+          <ExperimentCard {...THIRD_EXPERIMENT} />
         </div>
       </Reveal>
     </Section>

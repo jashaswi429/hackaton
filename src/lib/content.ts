@@ -67,16 +67,16 @@ export const SECOND_EXPERIMENT = {
 } as const;
 
 /**
- * Reserved slots for experiments that are not built yet. Rendered as clearly
- * labelled COMING SOON placeholders — never as fake interactive experiments.
+ * Experiment 003 — the third live entry in the lab index.
+ * Same prop shape as the other experiments, so the index needs no changes.
  */
-export const PLACEHOLDER_EXPERIMENTS = [
-  {
-    number: 'EXPERIMENT 003',
-    title: 'TO BE ANNOUNCED',
-    description: 'Reserved for a future experiment.',
-    category: 'UNANNOUNCED',
-    status: 'COMING SOON',
-    available: false,
-  },
-] as const;
+export const THIRD_EXPERIMENT = {
+  number: 'EXPERIMENT 003',
+  title: 'THE HASH LAB',
+  description:
+    'One input, one fingerprint. Explore SHA-256, the avalanche effect, and the guessing game behind proof-of-work.',
+  category: 'CRYPTOGRAPHY / ONE-WAY FUNCTIONS',
+  status: 'AVAILABLE',
+  available: true,
+  href: '#/experiment/003',
+} as const;

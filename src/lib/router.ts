@@ -11,15 +11,17 @@ export const ROUTES = {
   landing: '#/',
   jpegLab: '#/experiment/001',
   qrLab: '#/experiment/002',
+  hashLab: '#/experiment/003',
 } as const;
 
-export type RouteName = 'landing' | 'jpegLab' | 'qrLab';
+export type RouteName = 'landing' | 'jpegLab' | 'qrLab' | 'hashLab';
 
 /** Map a location hash to a route name. Unknown hashes fall back to landing. */
 export function routeFromHash(hash: string): RouteName {
   const clean = hash.replace(/^#/, '').replace(/\/+$/, '');
   if (clean === '/experiment/001') return 'jpegLab';
   if (clean === '/experiment/002') return 'qrLab';
+  if (clean === '/experiment/003') return 'hashLab';
   return 'landing';
 }
 
